@@ -1,17 +1,36 @@
-<h1>投稿一覧</h1>
-<p><%= notice %></p>
-<table>
-  <tr>
-    <th>日付</th>
-    <th>内容</th>
-  </tr>
-<% @mypost.each do |blog| %>
-  <tr>
-    <td><%= blog.created_at %></td>
-    <td><%= blog.content %></td>
-    <td><%= link_to '詳細を確認する', mypost_path(mypost.id) %></td>
-  </tr>
-<% end %>
-</table>
-<br>
-<%= link_to '新しくブログを投稿する', new_mypost_path %>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>mypost</title>
+  </head>
+
+  <body>
+    <header>
+    </header>
+
+    <section>
+
+      <h1>投稿一覧</h1>
+      <p><%= notice %></p>
+      <table>
+        <tr>
+          <th>日付</th>
+          <th>内容</th>
+        </tr>
+      <% @mypost.each do |mypost| %>
+        <tr>
+          <td><%= mypost.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          <td><%= mypost.content %></td>
+        </tr>
+      <% end %>
+      </table>
+      <br>
+      <%= link_to 'new tweet', new_mypost_path %>
+    </section>
+
+    <footer>
+    </footer>
+
+  </body>
+
+</html>
