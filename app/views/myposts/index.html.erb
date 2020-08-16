@@ -21,6 +21,7 @@
         <tr>
           <td><%= mypost.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <td><%= mypost.content %></td>
+          <td><%= link_to "編集", edit_mypost_path(mypost.id) %></td>
         </tr>
       <% end %>
       </table>

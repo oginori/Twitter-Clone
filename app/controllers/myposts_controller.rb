@@ -17,8 +17,17 @@ class MypostsController < ApplicationController
     end
   end
 
-  def show
-    params[:id]
+  def edit
+    @mypost = Mypost.find(params[:id])
+  end
+
+  def uptdate
+    @mypost = Mypost.find(params[:id])
+    if @mypost.update(mypost_params)
+      redirect_to mypost_path, notice: "編集しました！"
+    else
+      render :edit
+    end
   end
 
   private
