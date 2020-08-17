@@ -9,7 +9,7 @@ class MypostsController < ApplicationController
   end
 
   def create
-    @mypost = Mypost.create(mypost_params)
+    @mypost = Mypost.new(mypost_params)
     if params[:back]
       render :new
     else

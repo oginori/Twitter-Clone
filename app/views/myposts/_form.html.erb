@@ -11,8 +11,7 @@
   <% end %>
 
   <div class=mypost_content>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_area :content, size: "50×5", class: "content_area" %>
   </div>
   <%= form.submit %>
   <br>

@@ -7,9 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
 
   <body>
+    <header>
+    </header>
     <%= yield %>
+    <footer>
+      <p>運営会社XXX株式会社</p>
+      <p>© 2020 DIVE INTO CODE Corp.</p>
+    </footer>
   </body>
 </html>

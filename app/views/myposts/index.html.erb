@@ -1,38 +1,20 @@
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <title>mypost</title>
-  </head>
+<section>
+  <h1>ホーム</h1>
+  <p><%= notice %></p>
+    <%= link_to '新しく投稿する', new_mypost_path, class:"btn-flat-border" %>
 
-  <body>
-    <header>
-    </header>
-
-    <section>
-
-      <h1>投稿一覧</h1>
-      <p><%= notice %></p>
-      <table>
-        <tr>
-          <th>日付</th>
-          <th>内容</th>
-        </tr>
-      <% @mypost.each do |mypost| %>
-        <tr>
-          <td><%= mypost.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-          <td><%= mypost.content %></td>
-          <td><%= link_to "編集", edit_mypost_path(mypost.id) %></td>
-          <td><%= link_to "削除", mypost_path(mypost.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
-        </tr>
-      <% end %>
-      </table>
-      <br>
-      <%= link_to 'new tweet', new_mypost_path %>
-    </section>
-
-    <footer>
-    </footer>
-
-  </body>
-
-</html>
+  <table class="myposts_list">
+    <tr>
+      <th class="line1">投稿日時</th>
+      <th class="line2">投稿内容</th>
+    </tr>
+  <% @mypost.each do |mypost| %>
+    <tr>
+      <td><%= mypost.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+      <td><%= mypost.content %></td>
+      <td><%= link_to "編集", edit_mypost_path(mypost.id) %></td>
+      <td><%= link_to "削除", mypost_path(mypost.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
+    </tr>
+  <% end %>
+  </table>
+</section>
