@@ -11,12 +11,30 @@
   </head>
 
   <body>
-    <header>
-    </header>
-    <%= yield %>
-    <footer>
-      <p>運営会社XXX株式会社</p>
-      <p>© 2020 DIVE INTO CODE Corp.</p>
-    </footer>
+    <div class="wrapper">
+      <header>
+        <div class="btn-border-bottom">
+          MYPOST
+        </div>
+        <div class="icon">
+          <a class="btn-social-square btn-social-square--facebook">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a class="btn-social-square btn-social-square--hatebu">
+            B!
+          </a>
+          <a class="btn-social-square btn-social-square--feedly">
+            <i class="fa fa-rss"></i>
+          </a>
+        </div>
+      </header>
+
+      <%= yield %>
+
+      <footer>
+        <p>運営会社XXX株式会社</p>
+        <p>© 2020 XXXXXXXXXXX Corp.</p>
+      </footer>
+    </div>
   </body>
 </html>
