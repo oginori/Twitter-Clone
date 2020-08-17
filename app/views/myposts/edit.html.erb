@@ -1,18 +1,2 @@
-<%= form_with(model: Mypost.new, local: true) do |form| %>
-  <% if @mypost.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @mypost.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @mypost.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class=mypost_content>
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<h2>編集する</h2>
+<%= render 'form' %>

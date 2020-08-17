@@ -22,6 +22,7 @@
           <td><%= mypost.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <td><%= mypost.content %></td>
           <td><%= link_to "編集", edit_mypost_path(mypost.id) %></td>
+          <td><%= link_to "削除", mypost_path(mypost.id), method: :delete, data: { confirm: '本当に削除していいですか？'} %></td>
         </tr>
       <% end %>
       </table>
